@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "storefront-risk-shield",
+  "name": "storefront-anti-scraping-shield",
   "main": "src/index.ts",
   "compatibility_date": "2026-08-09",
   "vars": {
@@ -14,7 +14,7 @@
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "storefront-risk-shield",
+      "database_name": "storefront-anti-scraping-shield",
       "migrations_dir": "migrations",
     },
   ],

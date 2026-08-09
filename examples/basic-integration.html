@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Anti-scraping integration example</title>
+    <!-- Load early so the runtime can observe the protected-page lifecycle. -->
+    <script src="https://worker.example/shield.js"></script>
+  </head>
+  <body>
+    <main>
+      <h1>Protected example route</h1>
+      <p>
+        Replace the reserved Worker hostname only after deploying the Worker and configuring this page origin
+        in ALLOWED_ORIGINS_JSON.
+      </p>
+    </main>
+  </body>
+</html>

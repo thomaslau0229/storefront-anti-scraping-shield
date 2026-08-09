@@ -112,6 +112,34 @@ describe("public repository boundary", () => {
     expect(existsSync(resolve(root, name))).toBe(false);
   });
 
+  it("uses the public anti-scraping project identity consistently", () => {
+    const packageMetadata = JSON.parse(readFileSync(resolve(root, "package.json"), "utf8")) as {
+      description: string;
+      name: string;
+    };
+    const readme = readFileSync(resolve(root, "README.md"), "utf8");
+    const workerConfig = readFileSync(resolve(root, "wrangler.jsonc"), "utf8");
+
+    expect(packageMetadata.name).toBe("storefront-anti-scraping-shield");
+    expect(packageMetadata.description).toContain("anti-scraping");
+    expect(readme).toContain("# Storefront Anti-Scraping Shield");
+    expect(workerConfig).toContain('"name": "storefront-anti-scraping-shield"');
+  });
+
+  it.each([
+    "docs/architecture.md",
+    "docs/configuration.md",
+    "docs/deployment.md",
+    "docs/threat-model.md",
+    "docs/api.md",
+    "examples/basic-integration.html",
+    ".github/workflows/ci.yml",
+    "CONTRIBUTING.md",
+    "CHANGELOG.md",
+  ])("contains the professional repository surface file %s", (name) => {
+    expect(readFileSync(resolve(root, name), "utf8").length).toBeGreaterThan(100);
+  });
+
   it("uses neutral reserved examples in configuration", () => {
     const config = readFileSync(resolve(root, "wrangler.jsonc"), "utf8");
     expect(config).toContain("https://site.example");

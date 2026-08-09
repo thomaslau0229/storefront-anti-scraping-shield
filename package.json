@@ -1,7 +1,7 @@
 {
-  "name": "storefront-risk-shield",
-  "version": "0.1.0",
-  "description": "A configurable risk-decision starter kit.",
+  "name": "storefront-anti-scraping-shield",
+  "version": "0.2.0",
+  "description": "A privacy-preserving anti-scraping starter kit for storefronts.",
   "type": "module",
   "license": "AGPL-3.0-only",
   "engines": {
