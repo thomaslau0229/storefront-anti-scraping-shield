@@ -1,0 +1,21 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "storefront-anti-scraping-shield",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-08-09",
+  "vars": {
+    "MODE": "log_only",
+    "ALLOWED_ORIGINS_JSON": "[\"https://site.example\"]",
+    "PROTECTED_PATHS_JSON": "[\"/protected\"]",
+    "EXCLUDED_PATHS_JSON": "[\"/excluded\"]",
+    "REDIRECT_URL": "https://destination.example/safe",
+    "SYNTHETIC_DWELL_THRESHOLD_MS": "1000",
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "storefront-anti-scraping-shield",
+      "migrations_dir": "migrations",
+    },
+  ],
+}

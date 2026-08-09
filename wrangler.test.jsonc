@@ -1,0 +1,12 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "storefront-anti-scraping-shield-test",
+  "main": "tests/fixtures/worker.ts",
+  "compatibility_date": "2026-08-08",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "storefront-anti-scraping-shield-test",
+    },
+  ],
+}
